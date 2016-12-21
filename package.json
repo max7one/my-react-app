@@ -1,0 +1,23 @@
+{
+  "name": "my-react-app",
+  "version": "1.0.0",
+  "description": "react redux react-router webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max7one/my-react-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/max7one/my-react-app/issues"
+  },
+  "homepage": "https://github.com/max7one/my-react-app#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
