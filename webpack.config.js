@@ -1,20 +1,25 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  context: __dirname,
+  devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    './src/app.js'
+    'webpack-hot-middleware/client',
+    './src/index'
   ],
   output: {
-    path: __dirname+'/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    // publicPath: '/static/'
   },
-  devtool: '#source-map',
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel'],
+      include: path.join(__dirname, 'src')
+    }]
+  }
 };
