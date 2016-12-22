@@ -15,6 +15,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  resolve: {
+   extensions: ['', '.js', '.jsx']   //import文件后缀
+  },
   module: {
     loaders: [{
       test: /\.js[x]?$/,
