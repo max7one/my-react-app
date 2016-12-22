@@ -1,11 +1,10 @@
 import React from 'react';
 import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router'
-import App from './modules/App'
-import Home from './modules/Home'
-import About from './modules/About'
-import Repos from './modules/Repos'
-import Redux from './modules/Redux'
-import {ReduxApp} from './main'
+import App from './App'
+import Home from './Home'
+import About from './About'
+import Repos from './Repos'
+import {ReduxApp} from '../redux/containers/Todo'
 
 export default(
   <Router history={browserHistory}>
