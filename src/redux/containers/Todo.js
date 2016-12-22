@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { connect,Provider } from 'react-redux';
 import { createStore, bindActionCreators } from 'redux';
-import Content from '../../components/nodelist';
+import Content from '../../components/NodeList';
 import Header from '../../components/Header';
 import * as TodoActions from '../actions/todoAction'
 
