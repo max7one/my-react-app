@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-          Hello, React Router!
+          Hello, React!
           <ul role="nav">
               <li><Link to="/about">About</Link></li>
               <li><Link to="/repos">Repos</Link></li>

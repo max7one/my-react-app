@@ -12,8 +12,10 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
+// 加载静态资源  browserHistory
+app.use(express.static(__dirname))
+
 app.get('*', function(req, res) {
-  console.log(path.join(__dirname, 'dist/index.html'));
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
