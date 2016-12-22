@@ -2,7 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  // devtool: 'cheap-module-eval-source-map',
+  // devtool: 'source-map',
+  // devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
     './src/index'
@@ -13,7 +15,15 @@ module.exports = {
     // publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false,
+      },
+      compress: {
+        warnings: false
+      }
+    })
   ],
   resolve: {
    extensions: ['', '.js', '.jsx']   //import文件后缀

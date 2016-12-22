@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
+var compression = require('compression');
 var config = require('./webpack.config');
 
 var app = express();
@@ -14,6 +15,9 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 // 加载静态资源  browserHistory
 app.use(express.static(__dirname))
+
+//开启gzip
+app.use(compression())
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));

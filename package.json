@@ -25,6 +25,7 @@
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
+    "compression": "^1.6.2",
     "express": "^4.13.4",
     "react-hot-loader": "^1.3.0",
     "redux-logger": "^2.7.4",
