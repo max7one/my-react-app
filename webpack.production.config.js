@@ -8,9 +8,8 @@ module.exports = {
     path.resolve(__dirname, 'src/index.js'),
   ],
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: './bundle_[hash].js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle_[hash].js'
   },
   module: {
     loaders:[{
