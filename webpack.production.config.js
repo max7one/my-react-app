@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-source-map',
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: './bundle.js'
+    filename: './bundle_[hash].js'
   },
   module: {
     loaders:[{
@@ -36,6 +36,7 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false},
       compress: { warnings: false}
-    })
+    }),
+    new HtmlWebpackPlugin({ template: 'dist/template.html'})
   ]
 };
