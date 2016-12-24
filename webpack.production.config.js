@@ -12,16 +12,18 @@ module.exports = {
     filename: 'bundle_[hash].js'
   },
   module: {
-    loaders:[{
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'src'),
-        loader: 'style-loader!css-loader'
-      },{
-        test: /\.js[x]?$/,
-        loaders: ['babel'],
-        exclude: /node_modules/,
-        include: path.join(__dirname, 'src')
-      }]
+    loaders: [{
+      test: /\.js[x]?$/,
+      loaders: ['babel'],
+      exclude: /node_modules/,
+      include: path.join(__dirname, 'src')
+    },{
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    },{
+      test: /\.scss$/,
+      loader: 'style!css!sass'
+    }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
