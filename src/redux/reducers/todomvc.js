@@ -1,6 +1,7 @@
 import Moment from 'moment';
 
 const InitialState = {
+  inputValue: "",
   dataSource: [{
     key: '1',
     time: '2016-12-24 05:14:55',

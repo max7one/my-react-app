@@ -5,13 +5,13 @@ import '../../style/todo.scss'
 import Input from '../../components/todomvc/Input'
 import Datalist from '../../components/todomvc/Datalist'
 import * as todomvcActions from '../actions/todomvcAction'
-import Moment from 'moment';
 
 class App extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div className="wrapper">
-        <Input onPress={this.props.actions.onPress} />
+        <Input onPress={this.props.actions.onPress} value={this.props.state.inputValue}/>
         <br/>
         <div style={{width:'100%'}}>
           <Datalist dataSource={this.props.state.dataSource} />
@@ -24,12 +24,9 @@ class App extends React.Component {
 function mapStateToProps(state) {
   console.warn(state);
   return{
-    state:{
-      dataSource:state.todomvcReducer.dataSource
-    }
+    state:state.todomvcReducer
   }
 }
-
 
 const mapDispatchToProps = dispatch=>({
   actions:bindActionCreators(todomvcActions,dispatch)
