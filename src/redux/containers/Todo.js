@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { connect,Provider } from 'react-redux';
-import { createStore, bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Content from '../../components/NodeList';
 import Header from '../../components/Header';
 import * as TodoActions from '../actions/todoAction'
@@ -18,16 +17,26 @@ const App = props =>{
 }
 
 function mapStateToProps(state) {
-  return {
-    title:state.title,
-    value:state.value,
-    items:state.items
+  const _state = state.todoReducer;
+  return{
+    title: _state.title,
+    value: _state.value,
+    items: _state.items,
   }
 }
 
-export const ReduxApp = connect(
-  mapStateToProps,
-  dispatch => ({
+// const mapStateToProps = state=>({
+//   state: {
+//     title:state.title,
+//     value:state.value,
+//     items:state.items
+//   }
+// })
+
+function mapDispatchToProps(dispatch) {
+  return {
     actions: bindActionCreators(TodoActions, dispatch)
-  })
-)(App);
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

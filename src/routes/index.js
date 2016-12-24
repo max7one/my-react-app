@@ -4,7 +4,7 @@ import App from './App'
 import Home from './Home'
 import About from './About'
 import Repos from './Repos'
-import {ReduxApp} from '../redux/containers/Todo'
+import ReduxApp from '../redux/containers/Todo'
 import Todomvc from '../redux/containers/todoMVC.js'
 
 export default(
