@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Node = props =>(
+const Node = ({onDel,children}) =>(
     <li>
-        <button onClick={props.onDel}>del</button>
-        <input type="checkbox"/* checked={props.checked}*//>
-        {props.children}
+        <button onClick={onDel}>del</button>
+        <input type="checkbox"/* checked={checked}*//>
+        {children}
     </li>
 )
 
-const Content = props =>(
+const Content = ({items, onDel}) =>(
     <ul style={{listStyleType:'none',padding:0}}>
-        {props.items.map((item)=>
-            <Node key={item.id} checked={item.checked} onDel={props.onDel.bind(this,item.id)}>
+        {items.map((item)=>
+            <Node key={item.id} checked={item.checked} onDel={onDel.bind(this,item.id)}>
                  {item.text}
             </Node>
         )}

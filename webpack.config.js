@@ -14,8 +14,7 @@ module.exports = {
     // publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({ template: 'dist/template.html'})
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
    extensions: ['', '.js', '.jsx']   //import文件后缀
@@ -27,8 +26,10 @@ module.exports = {
       include: path.join(__dirname, 'src')
     },{
       test: /\.css$/,
-      include: path.resolve(__dirname, 'src'),
       loader: 'style-loader!css-loader'
+    },{
+      test: /\.scss$/,
+      loader: 'style!css!sass'
     }]
   }
 };

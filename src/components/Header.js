@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Header = props =>(
+const Header = ({title,value,onChange,onAdd,mulDel}) =>(
     <div>
-        <h1>{props.title}</h1>
-        <input type="text" defaultValue={props.value} onChange={props.onChange}/>
-        <button onClick={props.onAdd} value={props.value}>add</button>
-        <button onClick={props.mulDel} value={props.value}>del</button>
+        <h1>{title}</h1>
+        <input type="text" defaultValue={value} onChange={onChange}/>
+        <button onClick={onAdd} value={value}>add</button>
+        <button onClick={mulDel} value={value}>del</button>
     </div>
 )
 

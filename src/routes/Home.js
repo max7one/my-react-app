@@ -10,6 +10,7 @@ export default class App extends Component {
               <li><Link to="/about">About</Link></li>
               <li><Link to="/repos">Repos</Link></li>
               <li><Link to="/redux">Redux Demo</Link></li>
+              <li><Link to="/todomvc">todoMVC</Link></li>
           </ul>
       </div>
     );

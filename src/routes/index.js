@@ -5,6 +5,7 @@ import Home from './Home'
 import About from './About'
 import Repos from './Repos'
 import {ReduxApp} from '../redux/containers/Todo'
+import Todomvc from '../redux/containers/todoMVC.js'
 
 export default(
   <Router history={browserHistory}>
@@ -13,6 +14,7 @@ export default(
       <Route path="/repos" component={Repos}/>
       <Route path="/about" component={About}/>
       <Route path="/redux" component={ReduxApp}/>
+      <Route path="/todomvc" component={Todomvc}/>
     </Route>
   </Router>
 )
