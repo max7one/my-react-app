@@ -67,6 +67,10 @@ function newOne(state = InitialState, action) {
       return state;
     }
 
+    case 'fetch':{
+      return {value:0}
+    }
+
     default: return state;
   }
 }

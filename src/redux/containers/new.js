@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     console.warn(this.props)
     const {value,items} = this.props.state
-    const {add,decrease,change,clear,addItem,delItem,editItem} = this.props.actions
+    const {add,decrease,change,clear,addItem,delItem,editItem,fetchData} = this.props.actions
 
     return (
       <div style={{marginLeft:100}}>
@@ -32,6 +32,10 @@ class App extends React.Component {
           <Link to='/'>Back</Link>
         </h1>
         <h1>Hello</h1>
+        {/* <h1>Fetch</h1> */}
+        <h1>
+          <a href="#" onClick={fetchData}>Fetch</a>
+        </h1>
         <br/>
         <h3>{value}</h3>
       <input type="text" value={value} onChange={change} onKeyDown= {this.mypress}/>
@@ -44,7 +48,6 @@ class App extends React.Component {
     <Button onClick={addItem.bind(null,value)} value={value} id={value}
       ref={
         (ref)=>{
-          console.warn(ref)
           return this.myButton = ref
         }
       }
