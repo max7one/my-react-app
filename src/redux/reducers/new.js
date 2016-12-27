@@ -57,12 +57,16 @@ function newOne(state = InitialState, action) {
     case 'delItem':{
       return {
         ...state,
-        items: state.items.concat({
-          id:state.items.length-1,
-          text:action.value
-        })
+        items: state.items.filter(item=>item.id!==action.id)
       }
     }
+
+    case 'saveItem':{
+      const id = action.item.id;
+      state.items[id].text = action.item.value;
+      return state;
+    }
+
     default: return state;
   }
 }

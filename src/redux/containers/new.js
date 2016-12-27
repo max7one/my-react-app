@@ -13,10 +13,19 @@ class App extends React.Component {
       this.props.actions.press(e);
     }
   }
+  edit = (id)=>{
+    console.log(id)
+    console.log(this)
+  }
+  save = (id)=>{
+    const value = this.refs[`input${id}`].value
+    this.props.actions.saveItem({id,value})
+  }
   render() {
     console.warn(this.props)
     const {value,items} = this.props.state
-    const {add,decrease,change,clear,addItem} = this.props.actions
+    const {add,decrease,change,clear,addItem,delItem,editItem} = this.props.actions
+
     return (
       <div style={{marginLeft:100}}>
         <h1>
@@ -40,13 +49,19 @@ class App extends React.Component {
         }
       }
       >添加</Button>
+      <br/>
+    <br/>
     <ul>
       {items?items.map((item)=>(
           <li key={item.id}>
           <p style={{fontSize: 20}}>
+            <button onClick={delItem.bind(null,item.id)}>del</button>　
+            <button onClick={this.edit.bind(null,item.id)}>edit</button>　
+            <button onClick={this.save.bind(null,item.id)}>save</button>　
             <input type="checkbox"/>　
-            {item.text}
+            <input type="text" defaultValue={item.text} ref={`input${item.id}`}/>
           </p>
+          <br/>
         </li>
       )):""}
     </ul>

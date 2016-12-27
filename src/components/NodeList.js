@@ -1,12 +1,14 @@
 import React from 'react';
 
-const Node = ({onDel,children}) =>(
+const Node = ({onDel,children}) =>{
+  return (
     <li>
-        <button onClick={onDel}>del</button>
+        <button onClick={onDel}>del11111111</button>
         <input type="checkbox"/* checked={checked}*//>
         {children}
     </li>
-)
+  )
+}
 
 const Content = ({items, onDel}) =>(
     <ul style={{listStyleType:'none',padding:0}}>
