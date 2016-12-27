@@ -5,12 +5,17 @@ export default class App extends Component {
   render() {
     return (
       <div>
-          Hello, React!
+          <h1>
+            Hello, React!
+          </h1>
+          <br/>
+          <br/>
+          <br/>
           <ul role="nav">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/repos">Repos</Link></li>
-              <li><Link to="/redux">Redux Demo</Link></li>
-              <li><Link to="/todomvc">todoMVC</Link></li>
+              <li><h1><Link to="/new">New</Link></h1></li>
+              <li><h1><Link to="/repos">Repos</Link></h1></li>
+              <li><h1><Link to="/redux">Redux Demo</Link></h1></li>
+              <li><h1><Link to="/todomvc">todoMVC</Link></h1></li>
           </ul>
       </div>
     );
